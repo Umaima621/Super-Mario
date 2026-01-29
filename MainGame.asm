@@ -182,7 +182,7 @@ pitCount  BYTE 0
     frameMid BYTE  "|                                    |",0
     frameBot BYTE  "+------------------------------------+",0
 
-    nameIN BYTE 200 DUP(0)      ; buffer for user’s name
+    nameIN BYTE 200 DUP(0)      ; buffer for userâ€™s name
 
     VK_A EQU 41h     ; A key
     VK_W EQU 57h     ; W key  
@@ -2884,7 +2884,7 @@ powerplayerCollision PROC
     mov edi, OFFSET powerY
     
 powerLoop:
-    ; X collision (±1)
+    ; X collision (Â±1)
     movzx eax, byte ptr [esi]
     movzx ebx, xPos
     sub eax, ebx
@@ -3452,7 +3452,7 @@ FireballPlayerCollision PROC
     cmp fireballActive, 0
     je noFireballCollision
     
-    ; X collision check (±2 for better detection)
+    ; X collision check (Â±2 for better detection)
     movzx eax, xPos
     mov dx, fireballX          ; fireballX is a WORD
     movzx edx, dl              ; Get low byte (X position)
@@ -3462,7 +3462,7 @@ FireballPlayerCollision PROC
     cmp eax, 2
     jg noFireballCollision
     
-    ; Y collision check (±2 for better detection)
+    ; Y collision check (Â±2 for better detection)
     movzx eax, yPos
     mov dx, fireballY          ; fireballY is a WORD
     movzx edx, dl              ; Get low byte (Y position)
